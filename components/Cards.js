@@ -36,11 +36,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
       title.classList.add('headline')
       author.classList.add('author')
       imgContainer.classList.add('img-container')
-      // pic.setAttribute('src')
 
       title.textContent = article.headline
       name.textContent = 'By ' + article.authorName
-      pic.src.textContent = article.authorPhoto
+      pic.setAttribute('src', article.authorPhoto)
 
       card.appendChild(title)
       card.appendChild(author)
@@ -70,11 +69,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
       title.classList.add('headline')
       author.classList.add('author')
       imgContainer.classList.add('img-container')
-      // pic.setAttribute('src')
 
       title.textContent = article.headline
       name.textContent = 'By ' + article.authorName
-      pic.src.textContent = article.authorPhoto
+      pic.setAttribute('src', article.authorPhoto)
 
       card.appendChild(title)
       card.appendChild(author)
@@ -104,11 +102,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
       title.classList.add('headline')
       author.classList.add('author')
       imgContainer.classList.add('img-container')
-      // pic.setAttribute('src')
 
       title.textContent = article.headline
       name.textContent = 'By ' + article.authorName
-      pic.src.textContent = article.authorPhoto
+      pic.setAttribute('src', article.authorPhoto)
 
       card.appendChild(title)
       card.appendChild(author)
@@ -138,11 +135,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
       title.classList.add('headline')
       author.classList.add('author')
       imgContainer.classList.add('img-container')
-      // pic.setAttribute('src')
 
       title.textContent = article.headline
       name.textContent = 'By ' + article.authorName
-      pic.src.textContent = article.authorPhoto
+      pic.setAttribute('src', article.authorPhoto)
 
       card.appendChild(title)
       card.appendChild(author)
@@ -172,11 +168,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
       title.classList.add('headline')
       author.classList.add('author')
       imgContainer.classList.add('img-container')
-      // pic.setAttribute('src')
 
       title.textContent = article.headline
       name.textContent = 'By ' + article.authorName
-      pic.src.textContent = article.authorPhoto
+      pic.setAttribute('src', article.authorPhoto)
 
       card.appendChild(title)
       card.appendChild(author)
