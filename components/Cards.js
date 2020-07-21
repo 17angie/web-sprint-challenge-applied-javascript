@@ -24,173 +24,65 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
   .then(response => {
+    const container = document.querySelector('.cards-container')
+
     response.data.articles.bootstrap.forEach(article => {
-      const card = document.createElement('div')
-      const title = document.createElement('div')
-      const author = document.createElement('div')
-      const imgContainer = document.createElement('div')
-      const pic = document.createElement('img')
-      const name = document.createElement('span')
-
-      card.classList.add('card')
-      title.classList.add('headline')
-      author.classList.add('author')
-      imgContainer.classList.add('img-container')
-
-      title.textContent = article.headline
-      name.textContent = 'By ' + article.authorName
-      pic.setAttribute('src', article.authorPhoto)
-
-      card.appendChild(title)
-      card.appendChild(author)
-      author.appendChild(imgContainer)
-      imgContainer.appendChild(pic)
-      author.appendChild(name)
-
-      card.addEventListener('click', () => {
-        console.log(article.headline)
-      })
-
-      const container = document.querySelector('.cards-container')
-
-      container.appendChild(card)
-
+      container.appendChild(cardCreator(article))
     })
 
     response.data.articles.javascript.forEach(article => {
-      const card = document.createElement('div')
-      const title = document.createElement('div')
-      const author = document.createElement('div')
-      const imgContainer = document.createElement('div')
-      const pic = document.createElement('img')
-      const name = document.createElement('span')
-
-      card.classList.add('card')
-      title.classList.add('headline')
-      author.classList.add('author')
-      imgContainer.classList.add('img-container')
-
-      title.textContent = article.headline
-      name.textContent = 'By ' + article.authorName
-      pic.setAttribute('src', article.authorPhoto)
-
-      card.appendChild(title)
-      card.appendChild(author)
-      author.appendChild(imgContainer)
-      imgContainer.appendChild(pic)
-      author.appendChild(name)
-
-      card.addEventListener('click', () => {
-        console.log(article.headline)
-      })
-
-      const container = document.querySelector('.cards-container')
-
-      container.appendChild(card)
-
+      container.appendChild(cardCreator(article))
     })
 
     response.data.articles.jquery.forEach(article => {
-      const card = document.createElement('div')
-      const title = document.createElement('div')
-      const author = document.createElement('div')
-      const imgContainer = document.createElement('div')
-      const pic = document.createElement('img')
-      const name = document.createElement('span')
-
-      card.classList.add('card')
-      title.classList.add('headline')
-      author.classList.add('author')
-      imgContainer.classList.add('img-container')
-
-      title.textContent = article.headline
-      name.textContent = 'By ' + article.authorName
-      pic.setAttribute('src', article.authorPhoto)
-
-      card.appendChild(title)
-      card.appendChild(author)
-      author.appendChild(imgContainer)
-      imgContainer.appendChild(pic)
-      author.appendChild(name)
-
-      card.addEventListener('click', () => {
-        console.log(article.headline)
-      })
-
-      const container = document.querySelector('.cards-container')
-
-      container.appendChild(card)
-
+      container.appendChild(cardCreator(article))
     })
 
     response.data.articles.node.forEach(article => {
-      const card = document.createElement('div')
-      const title = document.createElement('div')
-      const author = document.createElement('div')
-      const imgContainer = document.createElement('div')
-      const pic = document.createElement('img')
-      const name = document.createElement('span')
-
-      card.classList.add('card')
-      title.classList.add('headline')
-      author.classList.add('author')
-      imgContainer.classList.add('img-container')
-
-      title.textContent = article.headline
-      name.textContent = 'By ' + article.authorName
-      pic.setAttribute('src', article.authorPhoto)
-
-      card.appendChild(title)
-      card.appendChild(author)
-      author.appendChild(imgContainer)
-      imgContainer.appendChild(pic)
-      author.appendChild(name)
-
-      card.addEventListener('click', () => {
-        console.log(article.headline)
-      })
-
-      const container = document.querySelector('.cards-container')
-
-      container.appendChild(card)
-
+      container.appendChild(cardCreator(article))
     })
 
     response.data.articles.technology.forEach(article => {
-      const card = document.createElement('div')
-      const title = document.createElement('div')
-      const author = document.createElement('div')
-      const imgContainer = document.createElement('div')
-      const pic = document.createElement('img')
-      const name = document.createElement('span')
-
-      card.classList.add('card')
-      title.classList.add('headline')
-      author.classList.add('author')
-      imgContainer.classList.add('img-container')
-
-      title.textContent = article.headline
-      name.textContent = 'By ' + article.authorName
-      pic.setAttribute('src', article.authorPhoto)
-
-      card.appendChild(title)
-      card.appendChild(author)
-      author.appendChild(imgContainer)
-      imgContainer.appendChild(pic)
-      author.appendChild(name)
-
-      card.addEventListener('click', () => {
-        console.log(article.headline)
-      })
-
-      const container = document.querySelector('.cards-container')
-
-      container.appendChild(card)
-
+      container.appendChild(cardCreator(article))
     })
 
-    console.log(response)
   })
+
   .catch(err => {
-    console.log('ERROR', err)
+    console.log('Your error message is ', err.message)
   })
+
+
+const cardCreator = (obj) => {
+  const card = document.createElement('div')
+  const title = document.createElement('div')
+  const author = document.createElement('div')
+  const imgContainer = document.createElement('div')
+  const pic = document.createElement('img')
+  const name = document.createElement('span')
+
+  card.classList.add('card')
+  title.classList.add('headline')
+  author.classList.add('author')
+  imgContainer.classList.add('img-container')
+
+  title.textContent = obj.headline
+  name.textContent = 'By ' + obj.authorName
+  pic.setAttribute('src', obj.authorPhoto)
+
+  card.appendChild(title)
+  card.appendChild(author)
+  author.appendChild(imgContainer)
+  imgContainer.appendChild(pic)
+  author.appendChild(name)
+
+  card.addEventListener('click', () => {
+    console.log(obj.headline)
+  })
+
+  const container = document.querySelector('.cards-container')
+
+  container.appendChild(card)
+
+  return card
+}
